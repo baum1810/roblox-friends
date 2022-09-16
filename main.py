@@ -1,5 +1,11 @@
-import requests
-import threading
+from os import system
+try:
+    import requests
+    import threading
+except:
+    system("pip install requests")
+    system("pip install threading")
+
 def rfriends(userid, amount):
     with open('cookies.txt', 'r') as cookies:
         cookies = cookies.read().splitlines()
@@ -29,3 +35,12 @@ def rfriends(userid, amount):
     for x in range(int(amount)):
         cookie = cookies[x]
         threading.Thread(target=send_friend, args=(cookie,userid,)).start()
+
+userid = input("userid\n> ")
+system("cls")
+amount =input("amount\n> ")
+system("cls")
+rfriends(userid, amount)
+
+        
+        
