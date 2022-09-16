@@ -1,7 +1,7 @@
 import requests
 import threading
 def rfriends(userid, amount):
-    with open('/cookies.txt', 'r') as cookies:
+    with open('cookies.txt', 'r') as cookies:
         cookies = cookies.read().splitlines()
     batch = []
     for x in cookies:
